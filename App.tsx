@@ -6,7 +6,7 @@ import { MinhaColecao } from "./src/screens/MinhasColecoes/minhasColecoes";
 
 export default function App() {
   return (
-    // <CriarColecao/>
-    <MinhaColecao/>
+    <CriarColecao/>
+    // <MinhaColecao/>
   );
 }

@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#121212',
+  
   },
 
   header: {
@@ -64,13 +65,13 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     backgroundColor: '#1a1a1a',
+   
   },
 
   switchLabel: {
     color: '#fff',
     marginLeft: 10,
     fontSize: 16,
-    marginTop: 2,
   },
 
   helpCircleCustom: {
@@ -88,5 +89,6 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
     lineHeight: 18,
+    
   },
 });

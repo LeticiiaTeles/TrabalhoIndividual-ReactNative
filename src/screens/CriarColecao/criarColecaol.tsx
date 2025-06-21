@@ -68,6 +68,7 @@ const CriarColecao = () => {
         </ScrollView>
 
         {/* Rodapé fixo com switch */}
+        
         <View style={[
           styles.switchArea,
           {
@@ -75,16 +76,17 @@ const CriarColecao = () => {
             bottom: 20,
             left: 0,
             right: 0,
-            borderTopWidth: 1,
             borderTopColor: '#333',
+            
           }
         ]}>
-          <Switch
+           <Switch
             value={publico}
             onValueChange={setPublico}
             trackColor={{ false: '#888', true: '#4da6ff' }}
             thumbColor="#4da6ff"
           />
+          
           <Text style={styles.switchLabel}>Tornar público</Text>
           <View style={styles.helpCircleCustom}>
             <Text style={styles.helpText}>?</Text>
