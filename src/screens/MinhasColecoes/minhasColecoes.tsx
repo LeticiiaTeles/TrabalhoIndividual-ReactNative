@@ -9,14 +9,14 @@ import {
   ListRenderItem,
 } from 'react-native';
 import { styles } from './minhasColecoesStyle';
-import ProfileImagem from '../../assets/perfil.png';
-import BotaoIcon from '../../assets/botao.png';
-import SetaIcon from '../../assets/seta.png';
-import ComentarioIcon from '../../assets/comentario.png';
-import NunuBackground from '../../assets/nunu.jpg';
+import ProfileImage from '../../assets/perfil.png';
+import ButtonIcon from '../../assets/botao.png';
+import BackIcon from '../../assets/seta.png';
+import CommentIcon from '../../assets/comentario.png';
+import BackgroundImage from '../../assets/nunu.jpg';
 import { Image as RNImage } from 'react-native';
 
-interface Dorama {
+interface Drama {
   id: number;
   title: string;
   country: string;
@@ -27,7 +27,7 @@ interface Dorama {
 }
 
 export const MinhaColecao: React.FC = () => {
-  const [colecao] = useState<Dorama[]>([
+  const [collection] = useState<Drama[]>([
     {
       id: 1,
       title: 'Minha Namorada É uma Gumiho',
@@ -76,45 +76,39 @@ export const MinhaColecao: React.FC = () => {
     },
   ]);
 
-  const renderItem: ListRenderItem<Dorama> = ({ item }) => (
-  <View>
-    <TouchableOpacity style={styles.cardDorama} activeOpacity={0.7}>
-      <Image source={{ uri: item.image }} style={styles.imagemDorama} />
-      <View style={styles.infoDorama}>
-        <Text style={styles.tituloDorama}>{item.title}</Text>
-        <Text style={styles.detalhesDorama}>
-          {`${item.country}  •  ${item.genre}  •  ${item.type}`}
-        </Text>
-        <Text style={styles.avaliacao}>⭐ {item.rating.toFixed(1)}</Text>
-      </View>
-      <Text style={styles.menuIcon}>⋮</Text>
-    </TouchableOpacity>
-
-    
-    <View style={styles.divisor} />
-  </View>
-  
-);
+  const renderItem: ListRenderItem<Drama> = ({ item }) => (
+    <View>
+      <TouchableOpacity style={styles.doramaCard} activeOpacity={0.7}>
+        <Image source={{ uri: item.image }} style={styles.doramaImage} />
+        <View style={styles.doramaInfo}>
+          <Text style={styles.doramaTitle}>{item.title}</Text>
+          <Text style={styles.doramaDetails}>
+            {`${item.country}  •  ${item.genre}  •  ${item.type}`}
+          </Text>
+          <Text style={styles.doramaRating}>⭐ {item.rating.toFixed(1)}</Text>
+        </View>
+        <Text style={styles.menuIcon}>⋮</Text>
+      </TouchableOpacity>
+      <View style={styles.separator} />
+    </View>
+  );
 
   return (
     <SafeAreaView style={styles.container}>
-        
       <View style={styles.topSection}>
-        <Image source={NunuBackground} style={styles.backgroundPattern} />
+        <Image source={BackgroundImage} style={styles.backgroundImage} />
 
-        
         <View style={styles.headerIcons}>
           <TouchableOpacity activeOpacity={0.7}>
-            <Image source={SetaIcon} style={styles.iconImage} />
+            <Image source={BackIcon} style={styles.iconImage} />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.7}>
             <Text style={styles.menuIcon}>⋮</Text>
           </TouchableOpacity>
         </View>
 
-        
         <View style={styles.avatarRow}>
-          <Image source={ProfileImagem} style={styles.avatar} />
+          <Image source={ProfileImage} style={styles.avatar} />
           <View style={styles.profileText}>
             <Text style={styles.profileTitle}>Doramas para assistir</Text>
             <Text style={styles.profileSubtitle}>Criado por salaocilas64_355</Text>
@@ -125,33 +119,30 @@ export const MinhaColecao: React.FC = () => {
           Quando acabar o curso, preciso voltar a assistir meus doraminhas
         </Text>
 
-        <View style={styles.sectionDivider} />
+        <View style={styles.sectionSeparator} />
       </View>
 
-      
       <View style={styles.statsContainer}>
-        <Text style={styles.statsText}>{colecao.length} Programas  |  0 seguidor</Text>
+        <Text style={styles.statsText}>{collection.length} Programas  |  0 seguidor</Text>
         <View style={styles.commentSection}>
-          <View style={styles.commentContainer}>
-            <Image source={ComentarioIcon} style={styles.commentIcon} />
+          <View style={styles.commentBox}>
+            <Image source={CommentIcon} style={styles.commentIcon} />
             <Text style={styles.commentText}>Escreva um comentário</Text>
           </View>
-          <View style={styles.commentDivider} />
+          <View style={styles.commentSeparator} />
         </View>
       </View>
 
-      
       <FlatList
-        data={colecao}
+        data={collection}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={{ paddingHorizontal: 15, paddingBottom: 100 }}
         showsVerticalScrollIndicator={false}
       />
 
-      
       <TouchableOpacity style={styles.fab} activeOpacity={0.7}>
-        <RNImage source={BotaoIcon} style={styles.fabIcon} />
+        <RNImage source={ButtonIcon} style={styles.fabIcon} />
       </TouchableOpacity>
     </SafeAreaView>
   );

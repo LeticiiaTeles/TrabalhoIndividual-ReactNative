@@ -6,35 +6,35 @@ export const styles = StyleSheet.create({
     backgroundColor: '#1e1e1e',
   },
 
-  cardDorama: {
+  doramaCard: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 6,
   },
 
-  imagemDorama: {
+  doramaImage: {
     width: 150,
     height: 80,
   },
 
-  infoDorama: {
+  doramaInfo: {
     flex: 1,
   },
 
-  tituloDorama: {
+  doramaTitle: {
     color: '#FFF',
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 4,
   },
 
-  detalhesDorama: {
+  doramaDetails: {
     color: '#CCC',
     fontSize: 12,
     marginBottom: 6,
   },
 
-  avaliacao: {
+  doramaRating: {
     color: '#aaa',
     fontSize: 14,
   },
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 6,
   },
 
-  divisor: {
+  separator: {
     height: 2,
     backgroundColor: '#333',
     marginVertical: 12,
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     marginTop: 8,
   },
 
-  backgroundPattern: {
+  backgroundImage: {
     width: '100%',
     height: 200,
     resizeMode: 'cover',
@@ -121,7 +121,7 @@ export const styles = StyleSheet.create({
     lineHeight: 50,
   },
 
-  sectionDivider: {
+  sectionSeparator: {
     height: 2,
     backgroundColor: '#333',
     marginVertical: 10,
@@ -147,7 +147,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
 
-  commentContainer: {
+  commentBox: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
@@ -164,7 +164,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  commentDivider: {
+  commentSeparator: {
     height: 1,
     marginVertical: 3,
   },

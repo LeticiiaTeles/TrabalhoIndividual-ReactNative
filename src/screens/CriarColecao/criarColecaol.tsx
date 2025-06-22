@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Switch,
-  ScrollView,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {  View, Text, TextInput, TouchableOpacity, Switch, ScrollView, Keyboard,
+  TouchableWithoutFeedback,} from 'react-native';
 import { styles } from './criarColecaoStyle';
 import { Feather } from '@expo/vector-icons';
 
